@@ -24,6 +24,7 @@ jobs:
        run: date +%s > report.txt
        
      - name: Build Electron App With Nativefier
+       run: nativefier https://loader.to/ -n LoaderTo --ignore-gpu-blacklist -u chrome --file-download-options
        
      - name: Commit report
        run: |
