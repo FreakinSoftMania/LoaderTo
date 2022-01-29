@@ -17,7 +17,8 @@ jobs:
        run: npm install nativefier
        
      - name: Build Electron App With Nativefier
-       run: nativefier https://loader.to/ -n LoaderTo --ignore-gpu-blacklist -u chrome --file-download-options --upgrade -i favicon.ico
+       run: |
+         %USERPROFILE%\AppData\Roaming\npm\nativefier.cmd https://loader.to/ -n LoaderTo --ignore-gpu-blacklist -u chrome --file-download-options -i favicon.ico
        
      - name: Commit report
        run: |
