@@ -6,7 +6,7 @@ on:
     - cron: "0 10 * * */3"
   
 jobs:
- update_nativefier:
+ build:
     runs-on: windows-latest
     steps:   
      - uses: actions/checkout@v2
@@ -15,17 +15,9 @@ jobs:
        
      - name: Update/Install Nativefier
        run: npm install nativefier
- build:
-    needs: update_nativefier
-    runs-on: windows-latest
-    steps:
-     - uses: actions/checkout@v2
-     - name: Create report file
-       run: date +%s > report.txt
        
      - name: Build Electron App With Nativefier
        run: nativefier https://loader.to/ -n LoaderTo --ignore-gpu-blacklist -u chrome --file-download-options --upgrade -i favicon.ico
-       shell: cmd
        
      - name: Commit report
        run: |
