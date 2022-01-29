@@ -15,7 +15,7 @@ jobs:
        
      - name: Update/Install Nativefier
        run: npm install nativefier
-  build:
+ build:
     needs: update_nativefier
     runs-on: windows-latest
     steps:
