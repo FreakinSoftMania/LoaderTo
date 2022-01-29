@@ -18,7 +18,10 @@ jobs:
        
      - name: Build Electron App With Nativefier
        run: |
-         C:\Users\runneradmin\AppData\Roaming\npm\nativefier.cmd https://loader.to/ -n LoaderTo --ignore-gpu-blacklist -u chrome --file-download-options -i favicon.ico
+         cd C:\Users\runneradmin\
+         cd AppData
+         cd Roaming\npm
+         nativefier.cmd -n LoaderTo --ignore-gpu-blacklist -u chrome --file-download-options -i favicon.ico
        shell: cmd
        
      - name: Commit report
